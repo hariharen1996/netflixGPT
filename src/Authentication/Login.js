@@ -1,29 +1,25 @@
 import React, { useState } from "react";
-import Header from "./Header";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import useForm from "../Hooks/useForm";
 import { LOGIN_IMAGE } from "../utils/constants";
-import Footer from "./Footer";
 
 const Login = () => {
-  const [isSignedIn, setIsSignedIn] = useState(true);
   const [show, setShow] = useState(true);
-  const [user, setUser] = useState({ username: "", email: "", password: "" });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUser({ ...user, [name]: value });
-  };
-
   const showPassword = () => {
     setShow(!show);
   };
 
-  const handleSignUp = () => {
-    console.log("signup");
-  };
-
-  const handleSignIn = () => {
-    console.log("signIn");
-  };
+  const {
+    user,
+    handleChange,
+    signInError,
+    authError,
+    handleSignIn,
+    handleSignUp,
+    isSignedIn,
+    setIsSignedIn,
+  } = useForm();
 
   return (
     <>
@@ -43,10 +39,21 @@ const Login = () => {
               onSubmit={(e) => e.preventDefault()}
               className="flex flex-col py-2"
             >
-              <h1 className="font-medium text-xl sm:text-2xl my-1">
+              <h1 className="font-medium text-xl sm:text-2xl my-2">
                 {" "}
                 {isSignedIn ? "Sign In" : "Sign Up"}
               </h1>
+              {isSignedIn && authError && (
+                <p className="text-white text-sm font-bold bg-[#e87c03] p-2 w-full rounded-md">
+                  {`⛔${authError}`}
+                </p>
+              )}
+
+              {!isSignedIn && user?.error && (
+                <p className="text-white text-sm font-bold bg-[#e87c03] p-2 w-full rounded-md">
+                  {`⛔${user?.error}`}
+                </p>
+              )}
 
               {!isSignedIn && (
                 <>
@@ -56,8 +63,11 @@ const Login = () => {
                     type="text"
                     name="username"
                     placeholder="Username"
-                    className="rounded-md my-2 p-2 w-full bg-[#313131]"
+                    className="rounded-md my-2 p-2 w-full bg-gray-700"
                   />
+                  <p className="text-[#e87c03] text-sm font-medium">
+                    {!isSignedIn && signInError?.username}
+                  </p>
                 </>
               )}
               <input
@@ -66,21 +76,27 @@ const Login = () => {
                 type="text"
                 name="email"
                 placeholder="Email"
-                className="rounded-md my-2 p-2 w-full bg-[#313131]"
+                className="rounded-md my-2 p-2 w-full bg-gray-700"
               />
 
+              <p className="text-[#e87c03] text-sm font-medium">
+                {!isSignedIn && signInError?.email}
+              </p>
               <input
                 value={user.password}
                 onChange={handleChange}
                 type={show ? "password" : "text"}
                 name="password"
                 placeholder="Password"
-                className="rounded-md my-2 p-2 w-full bg-[#313131]"
+                className="rounded-md my-2 p-2 w-full bg-gray-700"
               />
+              <p className="text-[#e87c03] text-sm font-medium">
+                {!isSignedIn && signInError?.password}
+              </p>
               <button
                 onClick={isSignedIn ? handleSignIn : handleSignUp}
                 type="submit"
-                className="bg-[#e50914] hover:bg-opacity-80 p-2 w-full text-white font-bold my-4 rounded-md"
+                className="bg-red-700 p-2 w-full text-white font-bold my-4 rounded-md"
               >
                 {isSignedIn ? "Sign In" : "Sign Up"}
               </button>
@@ -89,7 +105,9 @@ const Login = () => {
                   <input
                     type="checkbox"
                     name="showpassword"
-                    className="mr-1 w-4 h-4 bg-gray-700"
+                    className={`mr-1 w-4 h-4 bg-gray-700 ${
+                      isSignedIn ? "pointer-event-none" : "pointer-events-auto"
+                    } `}
                     onClick={showPassword}
                   />
                   <label htmlFor="showpassword" className="text-sm">
@@ -97,14 +115,14 @@ const Login = () => {
                   </label>
                 </div>
                 <div className="flex items-center">
-                  <p className="text-sm hover:underline cursor-pointer">
-                    Need help?
+                  <p className="text-sm hover:underline underline cursor-pointer">
+                    Need Help?
                   </p>
                 </div>
               </div>
               <div
                 onClick={() => setIsSignedIn(!isSignedIn)}
-                className="mt-3 text-sm text-white font-medium cursor-pointer"
+                className="my-2 text-sm text-white font-medium cursor-pointer"
               >
                 {isSignedIn ? (
                   <p>

@@ -6,6 +6,19 @@ Netflix - gpt🔥
 - Routing of App using react router dom
 - Login Form (added tailwind css)
 - Header and Footer (added tailwind css)
+- Form validation
+- useRef Hook
+- Firebase Setup
+- diploy our app to production
+- Create Signup user account
+- implement sign in user api
+- Created redux store with user slice
+- Implemented signout
+- updated profile with username
+- BugFix: Signup user displayName
+- BugFix: Is user is not logged in Redirect/browse to login page and vice-versa
+- Unsubscribed to onAuthStateChanged Callback
+- Add hardcoded values to constant files
 
 # Getting Started with Create React App
 
