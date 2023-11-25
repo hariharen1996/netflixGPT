@@ -4,6 +4,8 @@ Netflix - gpt🔥
 - configured tailwindcss
 - Header
 - Routing of App using react router dom
+- Login Form (added tailwind css)
+- Header and Footer (added tailwind css)
 
 # Getting Started with Create React App
 
