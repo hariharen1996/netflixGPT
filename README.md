@@ -19,6 +19,24 @@ Netflix - gpt🔥
 - BugFix: Is user is not logged in Redirect/browse to login page and vice-versa
 - Unsubscribed to onAuthStateChanged Callback
 - Add hardcoded values to constant files
+- Register TMDB API, register app and get access token
+- get data from tmdb now playing movie list api
+- Custom hook for now playing movies
+- Create movieSlice
+- Update store with movie data
+- Planning for Trailer Container and MoviesContainer
+- Fetch Data for trailer video
+- Update store with trailer video data
+- Embedded the youtube video and make it autoplay and mute
+- Added tailwind css to Trailer Container
+- Build Movies Container
+- Build Movie List
+- Build Movie Card
+- TMDB Image CDN
+- Made Brower page amazing with tailwindCss
+- fetch data for PopularMovies and display using custom hook
+- fetch data for Toprated movies and display using custom hook
+- fetch data for upcoming movies and display using custom hook
 
 # Getting Started with Create React App
 

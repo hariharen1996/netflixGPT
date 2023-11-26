@@ -1,11 +1,17 @@
 import React from "react";
+import useNowPlayingMovies from "../Hooks/useNowPlayingMovies";
 import Header from "./Header";
+import TrailerContainer from "./TrailerContainer";
+import MoviesContainer from "./MoviesContainer";
 
 const Browse = () => {
+  useNowPlayingMovies();
+
   return (
     <div>
       <Header />
-      <h1>Browse</h1>
+      <TrailerContainer />
+      <MoviesContainer />
     </div>
   );
 };
