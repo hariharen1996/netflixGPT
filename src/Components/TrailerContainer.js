@@ -6,9 +6,7 @@ import VideoTitle from "./VideoTitle";
 const TrailerContainer = () => {
   const movies = useSelector((store) => store.movies?.nowPlayingMovies);
   if (movies === null) return;
-  // console.log(movies);
   const mainMovie = movies[11];
-  console.log(movies);
   const { overview, original_title, id, poster_path } = mainMovie;
 
   return (

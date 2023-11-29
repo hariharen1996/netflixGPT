@@ -37,6 +37,15 @@ Netflix - gpt🔥
 - fetch data for PopularMovies and display using custom hook
 - fetch data for Toprated movies and display using custom hook
 - fetch data for upcoming movies and display using custom hook
+- Search Page
+- Search Bar
+- Multi-language feature in our app
+- search api call
+- fetched getMoviesSuggestions from TMDB
+- created searchSlice add data
+- reused movie list component to make movies suggestion container
+- memoization
+- make our site response
 
 # Getting Started with Create React App
 

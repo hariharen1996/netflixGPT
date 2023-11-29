@@ -34,7 +34,7 @@ const Login = () => {
         </div>
 
         <div className="min-h-screen flex items-center justify-center">
-          <div className="mt-10 sm:mt-0 absolute text-white bg-black bg-opacity-70 w-[90%] sm:w-[50%] md:w[40%] lg:w-[30%] rounded-lg p-7 sm:p-6">
+          <div className="mt-10 pt-10 sm:mt-0 absolute text-white bg-black bg-opacity-70 w-full sm:w-[50%] md:w[40%] lg:w-[30%] rounded-lg p-7 sm:p-6">
             <form
               onSubmit={(e) => e.preventDefault()}
               className="flex flex-col py-2"

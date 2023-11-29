@@ -13,8 +13,6 @@ const VideoBg = ({ movieId }) => {
   useTopRatedMovies();
   useUpcomingMovies();
 
-  console.log(trailerVideo);
-
   return (
     <div className="w-screen h-full">
       <img

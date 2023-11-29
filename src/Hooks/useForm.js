@@ -34,14 +34,10 @@ const useForm = () => {
         .then((userCredential) => {
           // Signed in
           let credentials = userCredential.user;
-          console.log(credentials);
           navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
-          const errorMessage = error.message;
-          // console.log(errorCode);
-          // console.log(errorMessage);
 
           if (!user.email) {
             setAuthError("Please enter your email");
@@ -61,26 +57,21 @@ const useForm = () => {
       .then((userCredential) => {
         // Signed up
         let users = userCredential.user;
-        console.log(users);
         updateProfile(users, {
           displayName: user.username,
         })
           .then(() => {
             const { uid, email, displayName } = auth.currentUser;
+
             dispatch(
               addUser({ uid: uid, email: email, displayName: displayName })
             );
             navigate("/browse");
           })
-          .catch((error) => {
-            console.log(error);
-          });
+          .catch((error) => {});
       })
       .catch((error) => {
         let errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
 
         if (errorCode === "auth/email-already-in-use") {
           setUser({ ...user, error: "Email Already Registered" });
