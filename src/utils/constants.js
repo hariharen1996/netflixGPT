@@ -8,7 +8,7 @@ export const NETFLIX_BANNER =
   "https://assets.nflxext.com/ffe/siteui/vlv3/a09bb938-2d90-42ae-986e-5a3e4abf9e77/8eb1e781-3494-4aa4-9405-268ca6473e4c/IN-en-20231113-popsignuptwoweeks-perspective_alpha_website_medium.jpg";
 
 export const MOVIE_LANDING_IMAGE =
-  "https://cdn.sanity.io/images/4ij0poqn/production/f23a0dd0591642ad2e73197885c3f6f6b57b5700-1417x1063.jpg";
+  "https://juksun.com/wp-content/uploads/2023/02/Leo-Film-2023.jpg";
 
 export const API_OPTIONS = {
   method: "GET",
@@ -37,5 +37,12 @@ export const UPCOMING_MOVIES_API =
 export const SUPPORTED_LANGUAGES = [
   { identifier: "en", name: "English" },
   { identifier: "tamil", name: "Tamil" },
-  { identifier: "spanish", name: "Spanish" },
+  { identifier: "hindi", name: "Hindi" },
+  { identifier: "kannada", name: "Kannada" },
 ];
+
+export const DEFAULT_IMAGE =
+  "https://wallpaperbat.com/img/365042-fondos-de-pantalla-animated-movies-animation.jpg";
+
+export const ERROR_IMAGE =
+  "https://res.cloudinary.com/dhr74n4vu/image/upload/v1667905093/instashare_pagenotfound_rhhy4q.png";

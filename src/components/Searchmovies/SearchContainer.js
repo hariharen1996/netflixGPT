@@ -1,6 +1,6 @@
 import React from "react";
 import SearchMovies from "./SearchMovies";
-import { LOGIN_IMAGE } from "../utils/constants";
+import { LOGIN_IMAGE } from "../../utils/constants";
 import SearchMovieResults from "./SearchMovieResults";
 
 const SearchContainer = () => {
@@ -13,8 +13,9 @@ const SearchContainer = () => {
           alt="Netflix banner"
         />
       </div>
+
       <SearchMovies />
-      <div className="pt-6">
+      <div className="pt-6 w-full">
         <SearchMovieResults />
       </div>
     </div>

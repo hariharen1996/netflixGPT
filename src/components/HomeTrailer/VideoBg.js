@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
-import { MOVIE_LANDING_IMAGE } from "../utils/constants";
-import useMovieTrailer from "../Hooks/useMovieTrailer";
+import React from "react";
+import { MOVIE_LANDING_IMAGE } from "../../utils/constants";
+import useMovieTrailer from "../../Hooks/useMovieTrailer";
 import { useSelector } from "react-redux";
-import usePopularMovies from "../Hooks/usePopularMovies";
-import useTopRatedMovies from "../Hooks/useTopRated";
-import useUpcomingMovies from "../Hooks/useUpcomingMovies";
+import usePopularMovies from "../../Hooks/usePopularMovies";
+import useTopRatedMovies from "../../Hooks/useTopRated";
+import useUpcomingMovies from "../../Hooks/useUpcomingMovies";
+import Loader from "../loader/Loader";
 
 const VideoBg = ({ movieId }) => {
   const trailerVideo = useSelector((store) => store.movies?.trailerVideo);
@@ -13,11 +14,14 @@ const VideoBg = ({ movieId }) => {
   useTopRatedMovies();
   useUpcomingMovies();
 
+  if (!trailerVideo) return <Loader />;
+
   return (
     <div className="w-screen h-full">
       <img
         className="h-full w-screen bg-cover block sm:hidden"
         src={MOVIE_LANDING_IMAGE}
+        alt="landing page"
       />
 
       <iframe
@@ -25,12 +29,11 @@ const VideoBg = ({ movieId }) => {
         src={
           "https://www.youtube.com/embed/" +
           trailerVideo?.key +
-          "?autoplay=1&mute=1"
+          "?autoplay=1&mute=1&loop=1"
         }
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
-        frameBorder="0"
       ></iframe>
     </div>
   );

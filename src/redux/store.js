@@ -3,6 +3,8 @@ import userSlice from "./userSlice";
 import movieSlice from "./movieSlice";
 import searchSlice from "./searchSlice";
 import configSlice from "./configSlice";
+import videoSlice from "./videoSlice";
+import loaderSlice from "./loaderSlice";
 
 const appStore = configureStore({
   reducer: {
@@ -10,6 +12,8 @@ const appStore = configureStore({
     movies: movieSlice,
     search: searchSlice,
     config: configSlice,
+    movievideos: videoSlice,
+    load: loaderSlice,
   },
 });
 

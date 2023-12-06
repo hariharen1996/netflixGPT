@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
-import lang from "../utils/languageconstants";
+import React, { useRef } from "react";
+import lang from "../../utils/languageconstants";
 import { useDispatch, useSelector } from "react-redux";
-import { API_OPTIONS } from "../utils/constants";
-import { addMovieSearchResult } from "../redux/searchSlice";
+import { API_OPTIONS } from "../../utils/constants";
+import { addMovieSearchResult } from "../../redux/searchSlice";
 
 const SearchMovies = () => {
   const langKey = useSelector((store) => store.config.lang);
@@ -21,13 +21,14 @@ const SearchMovies = () => {
   const handleSearchClick = async () => {
     const response = await getSearchMovies();
     dispatch(addMovieSearchResult(response));
+    searchText.current.value = "";
   };
   return (
     <div className="pt-48 w-full">
-      <form onSubmit={(e) => e.preventDefault()} className="text-center">
+      <form onSubmit={(e) => e.preventDefault()} className="text-center mx-5">
         <input
           ref={searchText}
-          className="rounded-md my-2 p-2  md:px-2 md:py-4 s w-64 md:w-96 bg-gray-700 text-xs md:text-md text-white"
+          className="w-full rounded-md my-2 p-2 md:px-2 md:py-4 w-64 md:w-96 bg-gray-700 text-xs md:text-md text-white"
           type="search"
           placeholder={lang[langKey].getSearchPlaceholder}
           onChange={getSearchMovies}

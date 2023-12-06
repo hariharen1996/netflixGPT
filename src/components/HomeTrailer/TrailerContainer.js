@@ -2,11 +2,12 @@ import React from "react";
 import { useSelector } from "react-redux";
 import VideoBg from "./VideoBg";
 import VideoTitle from "./VideoTitle";
+import Loader from "../loader/Loader";
 
 const TrailerContainer = () => {
   const movies = useSelector((store) => store.movies?.nowPlayingMovies);
-  if (movies === null) return;
-  const mainMovie = movies[11];
+  if (movies === null) return <Loader />;
+  const mainMovie = movies[0];
   const { overview, original_title, id, poster_path } = mainMovie;
 
   return (

@@ -1,10 +1,10 @@
 import React from "react";
-import useNowPlayingMovies from "../Hooks/useNowPlayingMovies";
-import Header from "./Header";
-import TrailerContainer from "./TrailerContainer";
-import MoviesContainer from "./MoviesContainer";
+import useNowPlayingMovies from "../../Hooks/useNowPlayingMovies";
+import Header from "../Header/Header";
+import TrailerContainer from "../HomeTrailer/TrailerContainer";
+import MoviesContainer from "../MoviesList/MoviesContainer";
 import { useSelector } from "react-redux";
-import SearchContainer from "./SearchContainer";
+import SearchContainer from "../Searchmovies/SearchContainer";
 
 const Browse = () => {
   const search = useSelector((store) => store.search.showSearch);
@@ -16,12 +16,12 @@ const Browse = () => {
       {search ? (
         <SearchContainer />
       ) : (
-        <>
+        <div className="w-full">
           <TrailerContainer />
           <div className="w-screen">
             <MoviesContainer />
           </div>
-        </>
+        </div>
       )}
     </div>
   );
