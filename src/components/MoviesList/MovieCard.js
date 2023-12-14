@@ -9,7 +9,7 @@ const MovieCard = ({ posterPath, movieId }) => {
   if (!movieId) return null;
 
   return (
-    <div className="w-36 md:w-48 text-white">
+    <div className="w-36 md:w-48 text-white transition duration-300 hover:-translate-y-5">
       <Link to={"/videos/" + movieId}>
         {" "}
         <img src={movieposter} alt="movie" />

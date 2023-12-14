@@ -5,7 +5,7 @@ const MovieGenre = () => {
   const movieGenre = useSelector((store) => store.movievideos?.videoGenre);
 
   return (
-    <div className="pt-40 sm:pt-48 px-12 absolute text-white bg-gradient-to-r from-black w-screen h-screen">
+    <div className="pt-40 sm:pt-48 px-12 text-white bg-gradient-to-r from-black w-screen h-screen">
       <h1 className="text-start text-xl xl:text-4xl px-26 font-bold">
         {movieGenre?.title}
       </h1>

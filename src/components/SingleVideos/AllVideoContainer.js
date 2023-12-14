@@ -9,7 +9,6 @@ const AllVideoContainer = () => {
       <SubHeader />
       <div className="w-screen h-screen bg-gradient-to-r from-black">
         <MovieVideos />
-        <MovieGenre />
       </div>
     </div>
   );

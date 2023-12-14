@@ -8,6 +8,8 @@ const TrailerContainer = () => {
   const movies = useSelector((store) => store.movies?.nowPlayingMovies);
   if (movies === null) return <Loader />;
   const mainMovie = movies[0];
+
+  console.log(movies);
   const { overview, original_title, id, poster_path } = mainMovie;
 
   return (

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
 import useForm from "../Hooks/useForm";
 import { LOGIN_IMAGE } from "../utils/constants";
 
@@ -25,7 +24,7 @@ const Login = () => {
     <>
       <Header />
       <div className="relative min-h-screen">
-        <div className="absolute min-h-screen h-full">
+        <div className="fixed w-full h-full">
           <img
             className="w-screen h-full object-cover"
             src={LOGIN_IMAGE}
@@ -140,7 +139,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

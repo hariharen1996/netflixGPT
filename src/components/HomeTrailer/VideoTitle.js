@@ -2,7 +2,7 @@ import React from "react";
 
 const VideoTitle = ({ title, overview }) => {
   return (
-    <div className="pt-32 sm:pt-48 px-12 absolute text-white bg-gradient-to-r from-black w-screen h-screen">
+    <div className="pt-40 sm:pt-48 px-12 absolute text-white bg-gradient-to-r from-black w-screen h-screen">
       {!title ? (
         <div className="bg-[#171721] animate-pulse rounded-md p-2 w-32"></div>
       ) : (
@@ -14,11 +14,8 @@ const VideoTitle = ({ title, overview }) => {
         <div className="bg-[#171721] animate-pulse rounded-md p-2 w-32 h-32 mt-3"></div>
       ) : (
         <>
-          <p className="py-2 lg:py-6 lg:px-26 lg:w-6/12 text-sm md:text-md sm:block hidden">
+          <p className="py-2 lg:py-6 lg:px-26 lg:w-6/12 text-sm md:text-md ">
             {overview}
-          </p>
-          <p className="py-2 lg:py-6 lg:px-26 lg:w-6/12 text-sm md:text-md sm:hidden block">
-            {overview.length > 300 && overview.slice(0, 286)}
           </p>
         </>
       )}

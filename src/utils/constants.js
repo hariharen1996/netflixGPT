@@ -14,7 +14,7 @@ export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization: "Bearer " + process.env.REACT_APP_TMDB,
+    Authorization: "Bearer " + process.env.REACT_APP_TMDB_APIKEY,
   },
 };
 
@@ -42,7 +42,7 @@ export const SUPPORTED_LANGUAGES = [
 ];
 
 export const DEFAULT_IMAGE =
-  "https://wallpaperbat.com/img/365042-fondos-de-pantalla-animated-movies-animation.jpg";
+  "https://moviegalleri.net/wp-content/uploads/2023/01/Actor-Mohanlal--Jailer-Movie-First-Look-Poster-HD.jpg";
 
 export const ERROR_IMAGE =
   "https://res.cloudinary.com/dhr74n4vu/image/upload/v1667905093/instashare_pagenotfound_rhhy4q.png";
