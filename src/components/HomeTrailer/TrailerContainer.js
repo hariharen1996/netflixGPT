@@ -9,7 +9,6 @@ const TrailerContainer = () => {
   if (movies === null) return <Loader />;
   const mainMovie = movies[0];
 
-  console.log(movies);
   const { overview, original_title, id, poster_path } = mainMovie;
 
   return (

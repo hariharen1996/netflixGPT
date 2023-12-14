@@ -5,7 +5,6 @@ import TrailerContainer from "../HomeTrailer/TrailerContainer";
 import MoviesContainer from "../MoviesList/MoviesContainer";
 import { useSelector } from "react-redux";
 import SearchContainer from "../Searchmovies/SearchContainer";
-import Footer from "../Footer/Footer";
 
 const Browse = () => {
   const search = useSelector((store) => store.search.showSearch);
@@ -17,14 +16,13 @@ const Browse = () => {
       {search ? (
         <SearchContainer />
       ) : (
-        <div className="w-full">
+        <div className="w-full h-screen">
           <TrailerContainer />
           <div className="w-screen">
             <MoviesContainer />
           </div>
         </div>
       )}
-      <div>{!search && <Footer />}</div>
     </div>
   );
 };

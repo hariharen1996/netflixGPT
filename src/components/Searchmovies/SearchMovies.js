@@ -9,7 +9,7 @@ const SearchMovies = () => {
   const searchText = useRef();
   const dispatch = useDispatch();
 
-  const getSearchMovies = async (e) => {
+  const getSearchMovies = async () => {
     const response = await fetch(
       `https://api.themoviedb.org/3/search/movie?query=${searchText.current.value}&include_adult=false&language=en-US&page=1`,
       API_OPTIONS

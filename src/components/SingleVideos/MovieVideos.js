@@ -1,21 +1,19 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { MOVIE_POSTER_CDN } from "../../utils/constants.js";
 import { useSelector } from "react-redux";
 import useMovieGenre from "../../Hooks/useVideoGenre.js";
 import useVideos from "../../Hooks/useVideos.js";
-import Loader from "../loader/Loader.js";
+
+import GenreContainer from "./GenreContainer.js";
 
 const MovieVideos = () => {
   const allVideos = useSelector((store) => store.movievideos?.videos);
-  const movieGenre = useSelector((store) => store.movievideos?.videoGenre);
-
   const { id } = useParams();
 
   useMovieGenre(id);
   useVideos(id);
 
-  if (!allVideos) return <Loader />;
+  if (!allVideos) return <GenreContainer />;
 
   return (
     <div className="w-screen h-screen">

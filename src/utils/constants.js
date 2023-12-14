@@ -42,7 +42,7 @@ export const SUPPORTED_LANGUAGES = [
 ];
 
 export const DEFAULT_IMAGE =
-  "https://moviegalleri.net/wp-content/uploads/2023/01/Actor-Mohanlal--Jailer-Movie-First-Look-Poster-HD.jpg";
+  "https://moviegalleri.net/wp-content/uploads/2019/06/Bigil-Vijay-New-Look-Poster-HD.jpg";
 
 export const ERROR_IMAGE =
   "https://res.cloudinary.com/dhr74n4vu/image/upload/v1667905093/instashare_pagenotfound_rhhy4q.png";

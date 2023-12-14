@@ -3,9 +3,11 @@ import { useSelector } from "react-redux";
 import MovieList from "./MovieList";
 import VideoShimmer from "../ShimmerUI/VideoShimmer";
 import Loader from "../loader/Loader";
+import Footer from "../Footer/Footer";
 
 const MoviesContainer = () => {
   const movies = useSelector((store) => store?.movies);
+  const search = useSelector((store) => store.search.showSearch);
 
   if (!movies) return <Loader />;
 
@@ -49,6 +51,7 @@ const MoviesContainer = () => {
           <VideoShimmer />
         )}
       </div>
+      <div className="w-full text-center">{!search && <Footer />}</div>
     </div>
   );
 };
